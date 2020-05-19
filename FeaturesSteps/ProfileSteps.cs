@@ -1,4 +1,6 @@
-﻿using MarsProject.Pages;
+﻿using MarsProject.Helpers;
+using MarsProject.Pages;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +13,18 @@ namespace MarsProject.FeaturesSteps
     [Binding]
     class ProfileSteps
     {
-        [Given(@"Seller is on the profile page and click on Education tab")]
-        public void GivenSellerIsOnTheProfilePageAndClickOnEducationTab()
+        [Given(@"Seller clicks on Education tab on the profile page")]
+        public void GivenSellerClicksOnEducationTabOnTheProfilePage()
         {
-            ProfilePage.ValidateProfilePage();
+            ProfilePage.ProfilePageTitle();
+            Assert.AreEqual(ProfilePage.actualProfileTitle, ConstantHelpers.expectedProfileTitle);
+
             ProfilePage.ClickEducation();
 
         }
 
-        [When(@"Seller add a new education with '(.*)', '(.*)', '(.*)', '(.*)' and (.*) and click on Add button")]
-        public void WhenSellerAddANewEducationWithAnd(string university, string country, string title, string degree, int year)
+        [When(@"Seller adds a new education with '(.*)', '(.*)', '(.*)', '(.*)' and (.*)")]
+        public void WhenSellerAddsANewEducationWithAnd(string university, string country, string title, string degree, int year)
         {
             ProfilePage.AddEducation(university, country, title, degree, year);
 
@@ -29,18 +33,19 @@ namespace MarsProject.FeaturesSteps
         [Then(@"Education should be added on the profile page")]
         public void ThenEducationShouldBeAddedOnTheProfilePage()
         {
-            ProfilePage.ValidateAddedEducation();
+            ProfilePage.PopUpMsg();
+            Assert.AreEqual("Education has been added", ProfilePage.popUpMessage.Text);
 
         }
 
-        [When(@"Seller select the Education record '(.*)' and click on edit icon")]
-        public void WhenSellerSelectTheEducationRecordAndClickOnEditIcon(string title)
+        [When(@"Seller selects the Education record '(.*)' for update")]
+        public void WhenSellerSelectsTheEducationRecordForUpdate(string title)
         {
             ProfilePage.ClickEditEducation(title);
         }
 
-        [When(@"Update the record with '(.*)' and '(.*)' and click on Update button")]
-        public void WhenUpdateTheRecordWithAndAndCickOnUpdateButton(string university, string country)
+        [When(@"Updates the record with '(.*)' and '(.*)'")]
+        public void WhenUpdatesTheRecordWithAnd(string university, string country)
         {
             ProfilePage.UpdateEducation(university, country);
         }
@@ -48,11 +53,12 @@ namespace MarsProject.FeaturesSteps
         [Then(@"Education should be updated on the profile page")]
         public void ThenEducationShouldBeUpdatedOnTheProfilePage()
         {
-            ProfilePage.ValidateUpdatedEducation();
+            ProfilePage.PopUpMsg();
+            Assert.AreEqual("Education as been updated", ProfilePage.popUpMessage.Text);
         }
 
-        [When(@"Seller select the Education record '(.*)' and click on delete icon")]
-        public void WhenSellerSelectTheRecordAndClickOnDeleteIcon(string title1)
+        [When(@"Seller deletes the Education record '(.*)'")]
+        public void WhenSellerDeletesTheEducationRecord(string title1)
         {
             ProfilePage.DeleteEducation(title1);
         }
@@ -60,7 +66,8 @@ namespace MarsProject.FeaturesSteps
         [Then(@"Education should be deleted on the profile page")]
         public void ThenEducationShouldBeDeletedOnTheProfilePage()
         {
-            ProfilePage.ValidateDeletedEducation();
+            ProfilePage.PopUpMsg();
+            Assert.AreEqual("Education entry successfully removed", ProfilePage.popUpMessage.Text);
         }
 
 

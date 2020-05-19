@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
-
+using TechTalk.SpecFlow.Bindings;
 
 namespace MarsProject.Utils
 {
@@ -21,7 +21,7 @@ namespace MarsProject.Utils
         private static ExtentReports extent;
         private static ScenarioContext scenarioContextCurrent;
 
-
+        
         public Start(ScenarioContext scenarioContext)
         {
             scenarioContextCurrent = scenarioContext;
@@ -30,7 +30,7 @@ namespace MarsProject.Utils
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            var htmlReporter = new ExtentHtmlReporter(ConstantHelpers.ReportsPath);
+            var htmlReporter = new ExtentHtmlReporter(ConstantHelpers.reportsPath);
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
 
             extent = new ExtentReports();
@@ -63,26 +63,36 @@ namespace MarsProject.Utils
         [AfterStep]
         public static void InsertReportingSteps()
         {
-            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
             if (scenarioContextCurrent.TestError == null)
             {
-                if (stepType == "Given")
+                if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Given)
+                {
                     scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "When")
+                }
+                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.When)
+                {
                     scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "Then")
+                }
+                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Then)
+                {
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+                }
+                
             }
             else if (scenarioContextCurrent.TestError != null)
             {
-                if (stepType == "Given")
+                if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Given)
+                {
                     scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
-                else if (stepType == "When")
+                }
+                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.When)
+                {
                     scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
-                else if (stepType == "Then")
+                }
+                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Then)
+                {
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
+                }
             }
 
         }

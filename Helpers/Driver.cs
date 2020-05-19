@@ -17,7 +17,7 @@ namespace MarsProject.Helpers
         {
             //Defining the browser
             driver = new ChromeDriver();
-            TurnOnWait();
+            
 
             //Maximise the window
             driver.Manage().Window.Maximize();
@@ -25,16 +25,10 @@ namespace MarsProject.Helpers
 
         public static string BaseUrl
         {
-            get { return ConstantHelpers.Url; }
+            get { return ConstantHelpers.url; }
         }
 
-        //Implicit Wait
-        public static void TurnOnWait()
-        {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-
-        }
-
+        
         public static void NavigateUrl()
         {
             driver.Navigate().GoToUrl(BaseUrl);

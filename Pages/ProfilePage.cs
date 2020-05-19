@@ -14,13 +14,15 @@ namespace MarsProject.Pages
 {
     class ProfilePage
     {
+        public static string actualProfileTitle;
+        public static IWebElement popUpMessage;
 
-        public static void ValidateProfilePage()
+        public static string ProfilePageTitle()
         {
             WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(100));
             wait.Until(ExpectedConditions.UrlToBe(ConstantHelpers.expectedProfileTitle));
-            string actualProfileTitle = Driver.driver.Url;
-            Assert.AreEqual(actualProfileTitle, ConstantHelpers.expectedProfileTitle);
+            actualProfileTitle = Driver.driver.Url;
+            return actualProfileTitle;
 
         }
 
@@ -46,36 +48,26 @@ namespace MarsProject.Pages
             Driver.driver.FindElement(By.Name("instituteName")).SendKeys(university);
 
             //Select Country of College/University
-            IWebElement element1 = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
-            SelectElement countrySelect = new SelectElement(element1);
+            IWebElement countryName = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
+            SelectElement countrySelect = new SelectElement(countryName);
             countrySelect.SelectByValue(country);
 
             //Select Title 
-            IWebElement element2 = Driver.driver.FindElement(By.Name("title"));
-            SelectElement titleSelect = new SelectElement(element2);
+            IWebElement titleName = Driver.driver.FindElement(By.Name("title"));
+            SelectElement titleSelect = new SelectElement(titleName);
             titleSelect.SelectByValue(title);
 
             //Find Degree Text box and send data
             Driver.driver.FindElement(By.Name("degree")).SendKeys(degree);
 
             //Select Year of graduation
-            IWebElement element3 = Driver.driver.FindElement(By.Name("yearOfGraduation"));
-            SelectElement yearSelect = new SelectElement(element3);
+            IWebElement graduationYear = Driver.driver.FindElement(By.Name("yearOfGraduation"));
+            SelectElement yearSelect = new SelectElement(graduationYear);
             yearSelect.SelectByValue(year.ToString());
 
             //Find Add button and click on that
             Driver.driver.FindElement(By.XPath("//input[@value ='Add']")).Click();
-            Thread.Sleep(1000);
-
-        }
-
-        public static void ValidateAddedEducation()
-        {
-            //Validate if Education record added successfully
-            IWebElement addedPopMsg = Driver.driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
-
-            Assert.AreEqual("Education has been added", addedPopMsg.Text);
-
+         
         }
 
         public static void ClickEditEducation(string title)
@@ -87,8 +79,7 @@ namespace MarsProject.Pages
             {
                 Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[last()]//tr/td[6]//span[1]")).Click();
             }
-            Thread.Sleep(2000);
-
+         
         }
 
         public static void UpdateEducation(string university, string country)
@@ -105,17 +96,7 @@ namespace MarsProject.Pages
 
             //Find Update button and click on that
             Driver.driver.FindElement(By.XPath("//div[@class='sixteen wide field']//input[@value='Update']")).Click();
-            Thread.Sleep(2000);
-
-        }
-
-        public static void ValidateUpdatedEducation()
-        {
-            //Validate if Education record updated successfully
-            IWebElement updatedPopMsg = Driver.driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
-
-            Assert.AreEqual("Education as been updated", updatedPopMsg.Text);
-
+         
         }
 
         public static void DeleteEducation(string title1)
@@ -127,19 +108,17 @@ namespace MarsProject.Pages
             {
                 Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[2]//tr/td[6]//span[2]")).Click();
             }
-            Thread.Sleep(2000);
 
         }
 
-        public static void ValidateDeletedEducation()
+        public static IWebElement PopUpMsg()
         {
-            //Validate if Education record deleted successfully
-            IWebElement deletedPopMsg = Driver.driver.FindElement(By.XPath("//div[@class='ns-box-inner']"));
-
-            Assert.AreEqual("Education entry successfully removed", deletedPopMsg.Text);
+            //Find out Popup Message
+            WebDriverWait wait3 = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
+            popUpMessage = wait3.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='ns-box-inner']")));
+            return popUpMessage;
 
         }
-
 
 
     }

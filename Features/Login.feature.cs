@@ -112,13 +112,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller is at the Trade Skills Website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.And("Navigate to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Navigates to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.When(string.Format("Seller enter valid {0} and valid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Seller enters valid {0} and valid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.And("Click on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.Then("Seller name should be seen on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -165,13 +165,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller is at the Trade Skills Website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 21
- testRunner.And("Navigate to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Navigates to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.When(string.Format("Seller enter valid {0} and invalid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Seller enters valid {0} and invalid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.And("Click on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
  testRunner.Then("Seller should get \"Send Verification Email\" message on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
