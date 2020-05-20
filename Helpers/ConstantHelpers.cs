@@ -12,9 +12,6 @@ namespace MarsProject.Helpers
         //Base Url
         public static string url = "http://192.168.99.100:5000";
 
-        //Expected Profile Title
-        public static string expectedProfileTitle = "http://192.168.99.100:5000/Account/Profile";
-
         //ExtentReportsPath
         public static string reportsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\TestReports\\");
 

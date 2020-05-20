@@ -19,7 +19,7 @@ namespace MarsProject.Utils
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
-        private static ScenarioContext scenarioContextCurrent;
+        private ScenarioContext scenarioContextCurrent;
 
         
         public Start(ScenarioContext scenarioContext)
@@ -61,19 +61,20 @@ namespace MarsProject.Utils
         }
 
         [AfterStep]
-        public static void InsertReportingSteps()
+        public void InsertReportingSteps()
         {
+            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType;
             if (scenarioContextCurrent.TestError == null)
             {
-                if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Given)
+                if (stepType == StepDefinitionType.Given)
                 {
                     scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
                 }
-                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.When)
+                else if (stepType == StepDefinitionType.When)
                 {
                     scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
                 }
-                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Then)
+                else if (stepType == StepDefinitionType.Then)
                 {
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
                 }
@@ -81,15 +82,15 @@ namespace MarsProject.Utils
             }
             else if (scenarioContextCurrent.TestError != null)
             {
-                if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Given)
+                if (stepType == StepDefinitionType.Given)
                 {
                     scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
                 }
-                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.When)
+                else if (stepType == StepDefinitionType.When)
                 {
                     scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
                 }
-                else if (ScenarioStepContext.Current.StepInfo.StepDefinitionType == StepDefinitionType.Then)
+                else if (stepType == StepDefinitionType.Then)
                 {
                     scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(scenarioContextCurrent.TestError.Message);
                 }

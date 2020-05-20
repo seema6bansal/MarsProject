@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
+
 
 namespace MarsProject.FeaturesSteps
 {
@@ -16,25 +18,26 @@ namespace MarsProject.FeaturesSteps
         [Given(@"Seller clicks on Education tab on the profile page")]
         public void GivenSellerClicksOnEducationTabOnTheProfilePage()
         {
-            ProfilePage.ProfilePageTitle();
-            Assert.AreEqual(ProfilePage.actualProfileTitle, ConstantHelpers.expectedProfileTitle);
-
             ProfilePage.ClickEducation();
 
         }
 
-        [When(@"Seller adds a new education with '(.*)', '(.*)', '(.*)', '(.*)' and (.*)")]
-        public void WhenSellerAddsANewEducationWithAnd(string university, string country, string title, string degree, int year)
+        [When(@"Seller adds a new education with the following data:")]
+        public void WhenSellerAddsANewEducationWithFollowingData(Table table)
         {
-            ProfilePage.AddEducation(university, country, title, degree, year);
+            var details = table.CreateSet<EducationDetails>();
+
+            foreach(EducationDetails education in details)
+            {
+                ProfilePage.AddEducation(education.University, education.Country, education.Title, education.Degree, education.Year);
+            }
 
         }
 
         [Then(@"Education should be added on the profile page")]
         public void ThenEducationShouldBeAddedOnTheProfilePage()
         {
-            ProfilePage.PopUpMsg();
-            Assert.AreEqual("Education has been added", ProfilePage.popUpMessage.Text);
+            Assert.AreEqual("Education has been added", ProfilePage.GetPopUp());
 
         }
 
@@ -42,32 +45,42 @@ namespace MarsProject.FeaturesSteps
         public void WhenSellerSelectsTheEducationRecordForUpdate(string title)
         {
             ProfilePage.ClickEditEducation(title);
+
         }
 
-        [When(@"Updates the record with '(.*)' and '(.*)'")]
-        public void WhenUpdatesTheRecordWithAnd(string university, string country)
+        [When(@"Updates University '(.*)'")]
+        public void WhenUpdatesUniversity(string university)
         {
-            ProfilePage.UpdateEducation(university, country);
+            ProfilePage.UpdateUniversity(university);
+
+        }
+
+        [When(@"Updates Country '(.*)'")]
+        public void WhenUpdatesCountry(string country)
+        {
+            ProfilePage.UpdateCountry(country);
+
         }
 
         [Then(@"Education should be updated on the profile page")]
         public void ThenEducationShouldBeUpdatedOnTheProfilePage()
         {
-            ProfilePage.PopUpMsg();
-            Assert.AreEqual("Education as been updated", ProfilePage.popUpMessage.Text);
+           Assert.AreEqual("Education as been updated", ProfilePage.GetPopUp());
+
         }
 
         [When(@"Seller deletes the Education record '(.*)'")]
         public void WhenSellerDeletesTheEducationRecord(string title1)
         {
             ProfilePage.DeleteEducation(title1);
+
         }
 
         [Then(@"Education should be deleted on the profile page")]
         public void ThenEducationShouldBeDeletedOnTheProfilePage()
         {
-            ProfilePage.PopUpMsg();
-            Assert.AreEqual("Education entry successfully removed", ProfilePage.popUpMessage.Text);
+            Assert.AreEqual("Education entry successfully removed", ProfilePage.GetPopUp());
+
         }
 
 

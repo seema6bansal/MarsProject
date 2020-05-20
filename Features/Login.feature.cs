@@ -76,12 +76,12 @@ namespace MarsProject.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Successful Login")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         [NUnit.Framework.TestCaseAttribute("seema.mvp@gmail.com", "mvp@2020", null)]
         public virtual void SuccessfulLogin(string email_Address, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "mytag"};
+                    "Ignore"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -115,12 +115,15 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Navigates to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.When(string.Format("Seller enters valid {0} and valid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Seller enters valid {0}", email_Address), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
- testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Enters valid {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
+ testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
  testRunner.Then("Seller name should be seen on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -141,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Unsuccessful Login", null, @__tags);
-#line 19
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -161,19 +164,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
+#line 21
  testRunner.Given("Seller is at the Trade Skills Website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 21
+#line 22
  testRunner.And("Navigates to the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
- testRunner.When(string.Format("Seller enters valid {0} and invalid {1}", email_Address, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 23
- testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("Seller enters valid {0}", email_Address), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 24
+ testRunner.And(string.Format("Enters invalid {0}", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+ testRunner.And("Clicks on the Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
  testRunner.Then("Seller should get \"Send Verification Email\" message on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

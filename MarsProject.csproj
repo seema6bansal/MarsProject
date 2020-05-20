@@ -156,6 +156,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeaturesSteps\EducationDetails.cs" />
     <Compile Include="FeaturesSteps\ProfileSteps.cs" />
     <Compile Include="Helpers\ConstantHelpers.cs" />
     <Compile Include="Helpers\Driver.cs" />

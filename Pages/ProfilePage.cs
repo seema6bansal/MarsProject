@@ -14,23 +14,11 @@ namespace MarsProject.Pages
 {
     class ProfilePage
     {
-        public static string actualProfileTitle;
-        public static IWebElement popUpMessage;
-
-        public static string ProfilePageTitle()
-        {
-            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(100));
-            wait.Until(ExpectedConditions.UrlToBe(ConstantHelpers.expectedProfileTitle));
-            actualProfileTitle = Driver.driver.Url;
-            return actualProfileTitle;
-
-        }
-
         public static void ClickEducation()
         {
             //Find Education tab and click on that
-            WebDriverWait wait1 = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
-            IWebElement education = wait1.Until(ExpectedConditions.ElementIsVisible(By.XPath("//a[contains(text(),'Education')]")));
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+            IWebElement education = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//a[contains(text(),'Education')]")));
             education.Click();
 
         }
@@ -39,13 +27,13 @@ namespace MarsProject.Pages
         {
 
             //Find Add New button and click on that
-            WebDriverWait wait2 = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
-            IWebElement addNewButton = wait2.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//div[contains(text(),'Add New')])[3]")));
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
+            IWebElement addNewButton = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//div[contains(text(),'Add New')])[3]")));
             addNewButton.Click();
 
 
             //Find College/University Name Text box and send data
-            Driver.driver.FindElement(By.Name("instituteName")).SendKeys(university);
+            Driver.driver.FindElement(By.XPath("//input[@name='instituteName']")).SendKeys(university);
 
             //Select Country of College/University
             IWebElement countryName = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
@@ -53,15 +41,15 @@ namespace MarsProject.Pages
             countrySelect.SelectByValue(country);
 
             //Select Title 
-            IWebElement titleName = Driver.driver.FindElement(By.Name("title"));
+            IWebElement titleName = Driver.driver.FindElement(By.XPath("//select[@name='title']"));
             SelectElement titleSelect = new SelectElement(titleName);
             titleSelect.SelectByValue(title);
 
             //Find Degree Text box and send data
-            Driver.driver.FindElement(By.Name("degree")).SendKeys(degree);
+            Driver.driver.FindElement(By.XPath("//input[@name='degree']")).SendKeys(degree);
 
             //Select Year of graduation
-            IWebElement graduationYear = Driver.driver.FindElement(By.Name("yearOfGraduation"));
+            IWebElement graduationYear = Driver.driver.FindElement(By.XPath("//select[@name='yearOfGraduation']"));
             SelectElement yearSelect = new SelectElement(graduationYear);
             yearSelect.SelectByValue(year.ToString());
 
@@ -82,13 +70,16 @@ namespace MarsProject.Pages
          
         }
 
-        public static void UpdateEducation(string university, string country)
+        public static void UpdateUniversity(string university)
         {
             //Update College/University Name
-            IWebElement UniversityText = Driver.driver.FindElement(By.XPath("//input[@name='instituteName']"));
-            UniversityText.Clear();
-            UniversityText.SendKeys(university);
+            IWebElement universityText = Driver.driver.FindElement(By.XPath("//input[@name='instituteName']"));
+            universityText.Clear();
+            universityText.SendKeys(university);
+        }
 
+        public static void UpdateCountry(string country)
+        { 
             //Update Country of Country
             IWebElement countryElement = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
             SelectElement countrySelect = new SelectElement(countryElement);
@@ -111,12 +102,12 @@ namespace MarsProject.Pages
 
         }
 
-        public static IWebElement PopUpMsg()
+        public static string GetPopUp()
         {
             //Find out Popup Message
-            WebDriverWait wait3 = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
-            popUpMessage = wait3.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='ns-box-inner']")));
-            return popUpMessage;
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
+            return (wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='ns-box-inner']")))).Text;
+            
 
         }
 

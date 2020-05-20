@@ -283,9 +283,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 34
- testRunner.When(string.Format("Seller adds a new Language with \'{0}\' and \'{1}\'", language, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Seller adds a new Language \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
+ testRunner.And(string.Format("Adds a new Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 36
  testRunner.Then("Language should be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -307,7 +310,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Languages on profile page", null, @__tags);
-#line 43
+#line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -327,13 +330,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 44
+#line 45
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 45
- testRunner.When(string.Format("Seller cancels added language with \'{0}\' and \'{1}\'", language, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 46
+ testRunner.When(string.Format("Seller cancels added Language \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+ testRunner.And(string.Format("cancels added Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
  testRunner.Then("Language should not be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -349,7 +355,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Language with null values", null, new string[] {
                         "Ignore"});
-#line 53
+#line 55
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -369,13 +375,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 54
+#line 56
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 55
+#line 57
  testRunner.When("Seller adds a new language with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 56
+#line 58
  testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -391,7 +397,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for duplicate Language", null, new string[] {
                         "Ignore"});
-#line 59
+#line 61
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -411,13 +417,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 60
+#line 62
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 61
+#line 63
  testRunner.When("Seller adds a new language with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 62
+#line 64
  testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -439,7 +445,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Language on the profile page", null, @__tags);
-#line 65
+#line 67
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -459,17 +465,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 66
+#line 68
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 67
+#line 69
  testRunner.When("Seller selects the Language record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 68
- testRunner.And(string.Format("Updates the record with \'{0}\' and \'{1}\'", language, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+ testRunner.And(string.Format("Updates the Language \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 69
-    testRunner.Then("Language should be Updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 71
+ testRunner.And(string.Format("Updates the Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 72
+    testRunner.Then("Language should be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -490,7 +499,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s updated Language on the profile page", null, @__tags);
-#line 76
+#line 79
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -510,17 +519,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 77
+#line 80
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 78
+#line 81
  testRunner.When("Seller selects the language record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 79
- testRunner.And(string.Format("Cancels the Updated record with \'{0}\' and \'{1}\'", language, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And(string.Format("Cancels updated Language \'{0}\'", language), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 80
- testRunner.Then("Language should not be Updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.And(string.Format("Cancels updated Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 84
+ testRunner.Then("Language should not be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -535,7 +547,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Language with null values", null, new string[] {
                         "Ignore"});
-#line 87
+#line 91
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -555,13 +567,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 88
+#line 92
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 89
+#line 93
  testRunner.When("Seller updates the language with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 90
+#line 94
  testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -577,7 +589,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for duplicate Language", null, new string[] {
                         "Ignore"});
-#line 93
+#line 97
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -597,13 +609,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 94
+#line 98
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 95
+#line 99
  testRunner.When("Seller updates the language with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 96
+#line 100
  testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -619,7 +631,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Seller’s Language on profile page", null, new string[] {
                         "Ignore"});
-#line 99
+#line 103
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -639,13 +651,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 100
+#line 104
  testRunner.Given("Seller clicks on Languages tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 101
+#line 105
  testRunner.When("Seller deletes the language record \'English\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 102
+#line 106
  testRunner.Then("Language should be deleted on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -667,7 +679,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Seller’s Skills on profile page", null, @__tags);
-#line 105
+#line 109
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -687,13 +699,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 106
+#line 110
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 107
- testRunner.When(string.Format("Seller adds a new Skill with \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 111
+ testRunner.When(string.Format("Seller adds a new Skill \'{0}\'", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 108
+#line 112
+ testRunner.And(string.Format("adds a new level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 113
  testRunner.Then("Skill should be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -715,7 +730,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Skills on profile page", null, @__tags);
-#line 115
+#line 120
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -735,13 +750,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 116
+#line 121
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 117
- testRunner.When(string.Format("Seller cancels added Skill with \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 122
+ testRunner.When(string.Format("Seller cancels added Skill \'{0}\'", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 118
+#line 123
+ testRunner.And(string.Format("Cancels added Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 124
  testRunner.Then("Skill should not be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -756,48 +774,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = new string[] {
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Skill with null values", null, new string[] {
-                        "Ignore"});
-#line 125
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 126
- testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 127
- testRunner.When("Seller adds a new skill with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 128
- testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Skill with duplicate values")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
-        public virtual void ValidateAddFunctionalityForSkillWithDuplicateValues()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Ignore"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Skill with duplicate values", null, new string[] {
                         "Ignore"});
 #line 131
 this.ScenarioInitialize(scenarioInfo);
@@ -823,30 +799,24 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 133
- testRunner.When("Seller adds a new skill with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new skill with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 134
- testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update Seller’s Skills on profile page")]
+        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Skill with duplicate values")]
         [NUnit.Framework.CategoryAttribute("Ignore")]
-        [NUnit.Framework.TestCaseAttribute("Java", "Intermediate", null)]
-        [NUnit.Framework.TestCaseAttribute("C#", "Intermediate", null)]
-        public virtual void UpdateSellerSSkillsOnProfilePage(string skill, string level, string[] exampleTags)
+        public virtual void ValidateAddFunctionalityForSkillWithDuplicateValues()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Skills on profile page", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Skill with duplicate values", null, new string[] {
+                        "Ignore"});
 #line 137
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -871,12 +841,63 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 139
- testRunner.When("Seller selects the skill record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new skill with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 140
- testRunner.And(string.Format("Updates the record with \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 141
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Update Seller’s Skills on profile page")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
+        [NUnit.Framework.TestCaseAttribute("Java", "Intermediate", null)]
+        [NUnit.Framework.TestCaseAttribute("C#", "Intermediate", null)]
+        public virtual void UpdateSellerSSkillsOnProfilePage(string skill, string level, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Ignore"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Skills on profile page", null, @__tags);
+#line 143
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 144
+ testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 145
+ testRunner.When("Seller selects the skill record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 146
+ testRunner.And(string.Format("Updates the Skill \'{0}\'", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 147
+ testRunner.And(string.Format("Updates the Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 148
  testRunner.Then("Skill should be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -898,7 +919,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s updated Skills on profile page", null, @__tags);
-#line 148
+#line 155
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -918,16 +939,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 149
+#line 156
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 150
+#line 157
  testRunner.When("Seller select the skill record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 151
- testRunner.And(string.Format("Cancels the updated record with \'{0}\' and \'{1}\'", skill, level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 158
+ testRunner.And(string.Format("Cancels updated Skill \'{0}\'", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 152
+#line 159
+    testRunner.And(string.Format("Cancels updated Level \'{0}\'", level), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 160
  testRunner.Then("Skill should not be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -943,7 +967,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Skill with null values", null, new string[] {
                         "Ignore"});
-#line 159
+#line 167
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -963,13 +987,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 160
+#line 168
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 161
+#line 169
  testRunner.When("Seller updates the skill with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 162
+#line 170
  testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -985,7 +1009,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Skill with duplicate values", null, new string[] {
                         "Ignore"});
-#line 165
+#line 173
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1005,13 +1029,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 166
+#line 174
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 167
+#line 175
  testRunner.When("Seller updates the skill with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 168
+#line 176
  testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1027,7 +1051,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Seller’s Skills on profile page", null, new string[] {
                         "Ignore"});
-#line 171
+#line 179
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1047,13 +1071,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 172
+#line 180
  testRunner.Given("Seller clicks on Skills tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 173
+#line 181
  testRunner.When("Seller deletes the Skill record \'Java\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 174
+#line 182
  testRunner.Then("Skill should be deleted on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1063,19 +1087,13 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Seller’s Education on profile page")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Wellington", "New Zealand", "B.Tech", "Bachelors", "2018", null)]
-        [NUnit.Framework.TestCaseAttribute("Wellington1", "New Zealand", "M.Tech", "Masters", "2018", null)]
-        public virtual void AddSellerSEducationOnProfilePage(string university, string country, string title, string degree, string year, string[] exampleTags)
+        public virtual void AddSellerSEducationOnProfilePage()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Seller’s Education on profile page", null, @__tags);
-#line 177
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Seller’s Education on profile page", null, new string[] {
+                        "mytag"});
+#line 185
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1095,14 +1113,32 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 178
+#line 186
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 179
- testRunner.When(string.Format("Seller adds a new education with \'{0}\', \'{1}\', \'{2}\', \'{3}\' and {4}", university, country, title, degree, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "University",
+                            "Country",
+                            "Title",
+                            "Degree",
+                            "Year"});
+                table1.AddRow(new string[] {
+                            "Wellington",
+                            "New Zealand",
+                            "B.Tech",
+                            "Bachelors",
+                            "2018"});
+                table1.AddRow(new string[] {
+                            "Wellington1",
+                            "New Zealand",
+                            "M.Tech",
+                            "Masters",
+                            "2018"});
+#line 187
+ testRunner.When("Seller adds a new education with the following data:", ((string)(null)), table1, "When ");
 #line hidden
-#line 180
- testRunner.Then("Education should be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 191
+    testRunner.Then("Education should be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -1111,19 +1147,13 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel Seller’s added Education on profile page")]
         [NUnit.Framework.CategoryAttribute("Ignore")]
-        [NUnit.Framework.TestCaseAttribute("Auckland", "New Zealand", "B.Tech", "Bachelors", "2018", null)]
-        [NUnit.Framework.TestCaseAttribute("Auckland1", "New Zealand", "M.Tech", "Masters", "2018", null)]
-        public virtual void CancelSellerSAddedEducationOnProfilePage(string university, string country, string title, string degree, string year, string[] exampleTags)
+        public virtual void CancelSellerSAddedEducationOnProfilePage()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Education on profile page", null, @__tags);
-#line 187
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Education on profile page", null, new string[] {
+                        "Ignore"});
+#line 194
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1143,13 +1173,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 188
+#line 195
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 189
- testRunner.When(string.Format("Seller cancels added education with \'{0}\', \'{1}\', \'{2}\', \'{3}\' and {4}", university, country, title, degree, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "University",
+                            "Country",
+                            "Title",
+                            "Degree",
+                            "Year"});
+                table2.AddRow(new string[] {
+                            "Auckland",
+                            "New Zealand",
+                            "B.Tech",
+                            "Bachelors",
+                            "2018"});
+                table2.AddRow(new string[] {
+                            "Auckland1",
+                            "New Zealand",
+                            "M.Tech",
+                            "Masters",
+                            "2018"});
+#line 196
+ testRunner.When("Seller cancels added education with the following data:", ((string)(null)), table2, "When ");
 #line hidden
-#line 190
+#line 200
  testRunner.Then("Education should not be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1164,48 +1212,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = new string[] {
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Education with null values", null, new string[] {
-                        "Ignore"});
-#line 197
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 198
- testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 199
- testRunner.When("Seller adds a new education with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 200
- testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Education with duplicate values")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
-        public virtual void ValidateAddFunctionalityForEducationWithDuplicateValues()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Ignore"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Education with duplicate values", null, new string[] {
                         "Ignore"});
 #line 203
 this.ScenarioInitialize(scenarioInfo);
@@ -1231,30 +1237,24 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 205
- testRunner.When("Seller adds a new education with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new education with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 206
- testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update Seller’s Education on the profile page")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Australia University", "Australia", null)]
-        [NUnit.Framework.TestCaseAttribute("Australia University1", "Australia", null)]
-        public virtual void UpdateSellerSEducationOnTheProfilePage(string university, string country, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Education with duplicate values")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
+        public virtual void ValidateAddFunctionalityForEducationWithDuplicateValues()
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Education on the profile page", null, @__tags);
+            string[] tagsOfScenario = new string[] {
+                    "Ignore"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Education with duplicate values", null, new string[] {
+                        "Ignore"});
 #line 209
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -1279,12 +1279,63 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 211
- testRunner.When("Seller selects the Education record \'B.Tech\' for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new education with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 212
- testRunner.And(string.Format("Updates the record with \'{0}\' and \'{1}\'", university, country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 213
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Update Seller’s Education on the profile page")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.TestCaseAttribute("Australia University", "Australia", null)]
+        [NUnit.Framework.TestCaseAttribute("Australia University1", "Australia", null)]
+        public virtual void UpdateSellerSEducationOnTheProfilePage(string university, string country, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Education on the profile page", null, @__tags);
+#line 215
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 216
+ testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 217
+ testRunner.When("Seller selects the Education record \'B.Tech\' for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 218
+ testRunner.And(string.Format("Updates University \'{0}\'", university), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 219
+ testRunner.And(string.Format("Updates Country \'{0}\'", country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 220
     testRunner.Then("Education should be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1306,7 +1357,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s updated Education on profile page", null, @__tags);
-#line 220
+#line 227
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1326,16 +1377,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 221
+#line 228
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 222
+#line 229
  testRunner.When("Seller selects the Education record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 223
- testRunner.And(string.Format("Cancels Updated record with \'{0}\' and \'{1}\'", university, country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 230
+ testRunner.And(string.Format("Cancels updated University \'{0}\'", university), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 224
+#line 231
+ testRunner.And(string.Format("Cancels updated Country \'{0}\'", country), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 232
  testRunner.Then("Education should not be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1351,7 +1405,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Education with null values", null, new string[] {
                         "Ignore"});
-#line 231
+#line 239
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1371,13 +1425,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 232
+#line 240
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 233
+#line 241
  testRunner.When("Seller updates the education with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 234
+#line 242
  testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1393,7 +1447,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Education with duplicate values", null, new string[] {
                         "Ignore"});
-#line 237
+#line 245
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1413,13 +1467,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 238
+#line 246
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 239
+#line 247
  testRunner.When("Seller updates the education with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 240
+#line 248
  testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1435,7 +1489,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "mytag"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Seller’s Education on profile page", null, new string[] {
                         "mytag"});
-#line 243
+#line 251
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1455,13 +1509,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 244
+#line 252
  testRunner.Given("Seller clicks on Education tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 245
+#line 253
  testRunner.When("Seller deletes the Education record \'M.Tech\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 246
+#line 254
  testRunner.Then("Education should be deleted on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1471,19 +1525,13 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add Seller’s Certification on profile page")]
         [NUnit.Framework.CategoryAttribute("Ignore")]
-        [NUnit.Framework.TestCaseAttribute("ISTQB", "India", "2016", null)]
-        [NUnit.Framework.TestCaseAttribute("DB2", "Auckland", "2016", null)]
-        public virtual void AddSellerSCertificationOnProfilePage(string certificate, string from, string year, string[] exampleTags)
+        public virtual void AddSellerSCertificationOnProfilePage()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Seller’s Certification on profile page", null, @__tags);
-#line 249
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Seller’s Certification on profile page", null, new string[] {
+                        "Ignore"});
+#line 257
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1503,13 +1551,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 250
+#line 258
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 251
- testRunner.When(string.Format("Seller adds a new Certification with \'{0}\', \'{1}\' and \'{2}\'", certificate, from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Certificate",
+                            "From",
+                            "Year"});
+                table3.AddRow(new string[] {
+                            "ISTQB",
+                            "India",
+                            "2016"});
+                table3.AddRow(new string[] {
+                            "DB2",
+                            "Auckland",
+                            "2016"});
+#line 259
+ testRunner.When("Seller adds a new Certification with the following data:", ((string)(null)), table3, "When ");
 #line hidden
-#line 252
+#line 263
  testRunner.Then("Certification should be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1519,19 +1579,13 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Cancel Seller’s added Certification on profile page")]
         [NUnit.Framework.CategoryAttribute("Ignore")]
-        [NUnit.Framework.TestCaseAttribute("Java", "India", "2016", null)]
-        [NUnit.Framework.TestCaseAttribute("AWS", "Auckland", "2016", null)]
-        public virtual void CancelSellerSAddedCertificationOnProfilePage(string certificate, string from, string year, string[] exampleTags)
+        public virtual void CancelSellerSAddedCertificationOnProfilePage()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Certification on profile page", null, @__tags);
-#line 259
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s added Certification on profile page", null, new string[] {
+                        "Ignore"});
+#line 266
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1551,13 +1605,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 260
+#line 267
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 261
- testRunner.When(string.Format("Seller cancels added Certification with \'{0}\', \'{1}\' and \'{2}\'", certificate, from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Certificate",
+                            "From",
+                            "Year"});
+                table4.AddRow(new string[] {
+                            "Java",
+                            "India",
+                            "2016"});
+                table4.AddRow(new string[] {
+                            "AWS",
+                            "Auckland",
+                            "2016"});
+#line 268
+ testRunner.When("Seller cancels added Certification with the following data:", ((string)(null)), table4, "When ");
 #line hidden
-#line 262
+#line 272
  testRunner.Then("Certification should not be added on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1572,48 +1638,6 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = new string[] {
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Certification with null values", null, new string[] {
-                        "Ignore"});
-#line 269
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 270
- testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 271
- testRunner.When("Seller adds a new certification with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 272
- testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Certification with duplicate values")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
-        public virtual void ValidateAddFunctionalityForCertificationWithDuplicateValues()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Ignore"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Certification with duplicate values", null, new string[] {
                         "Ignore"});
 #line 275
 this.ScenarioInitialize(scenarioInfo);
@@ -1639,30 +1663,24 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 277
- testRunner.When("Seller adds a new certification with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new certification with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 278
- testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Update Seller’s Certification on profile page")]
+        [NUnit.Framework.DescriptionAttribute("Validate Add functionality for Certification with duplicate values")]
         [NUnit.Framework.CategoryAttribute("Ignore")]
-        [NUnit.Framework.TestCaseAttribute("Wellington", "2018", null)]
-        [NUnit.Framework.TestCaseAttribute("Wellington", "2018", null)]
-        public virtual void UpdateSellerSCertificationOnProfilePage(string from, string year, string[] exampleTags)
+        public virtual void ValidateAddFunctionalityForCertificationWithDuplicateValues()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "Ignore"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Certification on profile page", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Add functionality for Certification with duplicate values", null, new string[] {
+                        "Ignore"});
 #line 281
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -1687,12 +1705,63 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 283
- testRunner.When("Seller selects the Certificate record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Seller adds a new certification with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 284
- testRunner.And(string.Format("Updates the record with \'{0}\' and \'{1}\'", from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 285
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Update Seller’s Certification on profile page")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
+        [NUnit.Framework.TestCaseAttribute("Wellington", "2018", null)]
+        [NUnit.Framework.TestCaseAttribute("Wellington", "2018", null)]
+        public virtual void UpdateSellerSCertificationOnProfilePage(string from, string year, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Ignore"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update Seller’s Certification on profile page", null, @__tags);
+#line 287
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 288
+ testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 289
+ testRunner.When("Seller selects the Certificate record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 290
+ testRunner.And(string.Format("Updates From  \'{0}\'", from), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 291
+ testRunner.And(string.Format("Updates Year \'{0}\'", year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 292
  testRunner.Then("Certification should be Updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1714,7 +1783,7 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Seller’s updated Certification on profile page", null, @__tags);
-#line 292
+#line 299
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1734,16 +1803,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 293
+#line 300
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 294
+#line 301
  testRunner.When("Seller selects the Certificate record for update", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 295
- testRunner.And(string.Format("Cancels the updated record with \'{0}\' and \'{1}\'", from, year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 302
+ testRunner.And(string.Format("Cancels updated From \'{0}\'", from), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 296
+#line 303
+ testRunner.And(string.Format("Cancels updated Year \'{0}\'", year), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 304
  testRunner.Then("Certification should not be updated on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1759,7 +1831,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Certification with null values", null, new string[] {
                         "Ignore"});
-#line 303
+#line 311
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1779,13 +1851,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 304
+#line 312
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 305
+#line 313
  testRunner.When("Seller updates the certification with null values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 306
+#line 314
  testRunner.Then("Seller should get error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1801,7 +1873,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate Update functionality for Certification with duplicate values", null, new string[] {
                         "Ignore"});
-#line 309
+#line 317
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1821,13 +1893,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 310
+#line 318
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 311
+#line 319
  testRunner.When("Seller updates the certification with duplicate values", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 312
+#line 320
  testRunner.Then("Seller should get duplicate error message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -1843,7 +1915,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Ignore"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Seller’s Certification on profile page", null, new string[] {
                         "Ignore"});
-#line 315
+#line 323
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -1863,13 +1935,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 316
+#line 324
  testRunner.Given("Seller clicks on Certification tab on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 317
+#line 325
  testRunner.When("Seller deletes the Certificate record \'Java\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 318
+#line 326
  testRunner.Then("Certificate should be deleted on the profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
