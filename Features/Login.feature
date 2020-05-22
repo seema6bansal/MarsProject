@@ -4,7 +4,7 @@ In order to Add skills
    I want to be able to login to the skill trade website
 
 
-@Ignore
+@ignore
 Scenario Outline: Successful Login
 	Given Seller is at the Trade Skills Website 
 	And Navigates to the Login Page
@@ -16,7 +16,7 @@ Examples:
 | email_address       | password |
 | seema.mvp@gmail.com | mvp@2020 |
 
-@Ignore
+@ignore
 Scenario Outline: Unsuccessful Login
 	Given Seller is at the Trade Skills Website
 	And Navigates to the Login Page

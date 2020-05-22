@@ -27,14 +27,15 @@ namespace MarsProject.Pages
         {
 
             //Find Add New button and click on that
-            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(50));
             IWebElement addNewButton = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("(//div[contains(text(),'Add New')])[3]")));
             addNewButton.Click();
 
-
             //Find College/University Name Text box and send data
-            Driver.driver.FindElement(By.XPath("//input[@name='instituteName']")).SendKeys(university);
-
+            WebDriverWait universityWait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(50));
+            IWebElement universityName = universityWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@name='instituteName']")));
+            universityName.SendKeys(university);
+         
             //Select Country of College/University
             IWebElement countryName = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
             SelectElement countrySelect = new SelectElement(countryName);
@@ -61,11 +62,13 @@ namespace MarsProject.Pages
         public static void ClickEditEducation(string title)
         {
             //Validate if Education record is on the profile page and then update it
-            IWebElement actualData = Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[1]//tr/td[3]"));
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+            IWebElement actualData = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[1]//tr/td[3]")));
 
             if ((actualData.Text).Equals(title))
             {
-                Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[last()]//tr/td[6]//span[1]")).Click();
+                WebDriverWait editWait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+                (editWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[last()]//tr/td[6]//span[1]")))).Click();
             }
          
         }
@@ -79,25 +82,32 @@ namespace MarsProject.Pages
         }
 
         public static void UpdateCountry(string country)
-        { 
+        {
             //Update Country of Country
             IWebElement countryElement = Driver.driver.FindElement(By.XPath("//select[@name='country']"));
             SelectElement countrySelect = new SelectElement(countryElement);
             countrySelect.SelectByText(country);
 
+        }
+
+        public static void SaveEducation() 
+        {
             //Find Update button and click on that
-            Driver.driver.FindElement(By.XPath("//div[@class='sixteen wide field']//input[@value='Update']")).Click();
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+            (wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='sixteen wide field']//input[@value='Update']")))).Click();
          
         }
 
         public static void DeleteEducation(string title1)
         {
             //Validate if Education record is on the profile page and then delete it
-            IWebElement deleteData = Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[2]//tr/td[3]"));
+            WebDriverWait wait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+            IWebElement deleteData = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[2]//tr/td[3]")));
 
             if ((deleteData.Text).Equals(title1))
             {
-                Driver.driver.FindElement(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[2]//tr/td[6]//span[2]")).Click();
+                WebDriverWait deleteWait = new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(30));
+                (deleteWait.Until(ExpectedConditions.ElementIsVisible(By.XPath("((//table[@class='ui fixed table'])[3]//tbody)[2]//tr/td[6]//span[2]")))).Click();
             }
 
         }

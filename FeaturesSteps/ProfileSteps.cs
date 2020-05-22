@@ -1,4 +1,5 @@
-﻿using MarsProject.Helpers;
+﻿using AventStack.ExtentReports.Gherkin.Model;
+using MarsProject.Helpers;
 using MarsProject.Pages;
 using NUnit.Framework;
 using System;
@@ -60,6 +61,12 @@ namespace MarsProject.FeaturesSteps
         {
             ProfilePage.UpdateCountry(country);
 
+        }
+
+        [When(@"Saves the Education details")]
+        public void WhenSavesTheEducationDetails()
+        {
+             ProfilePage.SaveEducation();
         }
 
         [Then(@"Education should be updated on the profile page")]

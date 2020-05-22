@@ -76,12 +76,12 @@ namespace MarsProject.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Successful Login")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.TestCaseAttribute("seema.mvp@gmail.com", "mvp@2020", null)]
         public virtual void SuccessfulLogin(string email_Address, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore"};
+                    "ignore"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -132,12 +132,12 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Unsuccessful Login")]
-        [NUnit.Framework.CategoryAttribute("Ignore")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.TestCaseAttribute("seema.mvp@gmail.com", "mmm@2020", null)]
         public virtual void UnsuccessfulLogin(string email_Address, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Ignore"};
+                    "ignore"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
